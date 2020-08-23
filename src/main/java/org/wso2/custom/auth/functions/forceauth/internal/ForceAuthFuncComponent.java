@@ -8,6 +8,8 @@ import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceCardinality;
 import org.osgi.service.component.annotations.ReferencePolicy;
 import org.wso2.carbon.identity.application.authentication.framework.JsFunctionRegistry;
+import org.wso2.custom.auth.functions.forceauth.GetUsernameFromContextFunction;
+import org.wso2.custom.auth.functions.forceauth.GetUsernameFromContextFunctionImpl;
 import org.wso2.custom.auth.functions.forceauth.SetForceAuthFunction;
 import org.wso2.custom.auth.functions.forceauth.SetForceAuthFunctionImpl;
 
@@ -39,6 +41,10 @@ public class ForceAuthFuncComponent {
         SetForceAuthFunction setForceAuthFunctionImpl = new SetForceAuthFunctionImpl();
         jsFunctionRegistry.register(JsFunctionRegistry.Subsystem.SEQUENCE_HANDLER, "setForceAuth",
                 setForceAuthFunctionImpl);
+
+        GetUsernameFromContextFunction getUsernameFromContextFunctionImpl = new GetUsernameFromContextFunctionImpl();
+        jsFunctionRegistry.register(JsFunctionRegistry.Subsystem.SEQUENCE_HANDLER, "getUsernameFromContext",
+                getUsernameFromContextFunctionImpl);
     }
 
     @Deactivate
@@ -46,6 +52,7 @@ public class ForceAuthFuncComponent {
 
         if (jsFunctionRegistry != null) {
             jsFunctionRegistry.deRegister(JsFunctionRegistry.Subsystem.SEQUENCE_HANDLER, "setForceAuth");
+            jsFunctionRegistry.deRegister(JsFunctionRegistry.Subsystem.SEQUENCE_HANDLER, "getUsernameFromContext");
         }
     }
 
