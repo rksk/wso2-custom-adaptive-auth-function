@@ -1,4 +1,4 @@
-package org.wso2.custom.auth.functions.forceauth.internal;
+package org.wso2.custom.auth.functions.internal;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -12,15 +12,15 @@ import org.osgi.service.component.annotations.ReferencePolicy;
 import org.wso2.carbon.identity.application.authentication.framework.JsFunctionRegistry;
 import org.wso2.carbon.registry.core.service.RegistryService;
 import org.wso2.carbon.user.core.service.RealmService;
-import org.wso2.custom.auth.functions.forceauth.GetClaimsForUsernameFunction;
-import org.wso2.custom.auth.functions.forceauth.GetClaimsForUsernameFunctionImpl;
-import org.wso2.custom.auth.functions.forceauth.GetUsernameFromContextFunction;
-import org.wso2.custom.auth.functions.forceauth.GetUsernameFromContextFunctionImpl;
-import org.wso2.custom.auth.functions.forceauth.SetForceAuthFunction;
-import org.wso2.custom.auth.functions.forceauth.SetForceAuthFunctionImpl;
+import org.wso2.custom.auth.functions.GetUsernameFromContextFunction;
+import org.wso2.custom.auth.functions.GetUsernameFromContextFunctionImpl;
+import org.wso2.custom.auth.functions.SetForceAuthFunction;
+import org.wso2.custom.auth.functions.SetForceAuthFunctionImpl;
+import org.wso2.custom.auth.functions.GetClaimsForUsernameFunction;
+import org.wso2.custom.auth.functions.GetClaimsForUsernameFunctionImpl;
 
 @Component(
-        name = "custom.auth.functions.forceauth.component",
+        name = "custom.auth.functions.component",
         immediate = true
 )
 public class CustomAuthFuncComponent {

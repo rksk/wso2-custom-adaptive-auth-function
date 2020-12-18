@@ -4,9 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.wso2.custom.auth.functions</groupId>
-    <artifactId>org.wso2.custom.auth.functions.forceauth</artifactId>
+    <artifactId>org.wso2.custom.auth.functions</artifactId>
     <version>1.0.0</version>
-    <name>Conditional Authentication - Force Authenticate</name>
+    <name>Conditional Authentication - Custom Functions</name>
     <packaging>bundle</packaging>
 
     <dependencies>
@@ -125,11 +125,11 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Private-Package>
-                            org.wso2.custom.auth.functions.forceauth.internal
+                            org.wso2.custom.auth.functions.internal
                         </Private-Package>
                         <Export-Package>
-                            !org.wso2.custom.auth.functions.forceauth.internal,
-                            org.wso2.custom.auth.functions.forceauth
+                            !org.wso2.custom.auth.functions.internal,
+                            org.wso2.custom.auth.functions
                         </Export-Package>
                         <Import-Package>
                             org.wso2.carbon.identity.application.common.*,

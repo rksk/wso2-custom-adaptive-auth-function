@@ -1,4 +1,4 @@
-package org.wso2.custom.auth.functions.forceauth.internal;
+package org.wso2.custom.auth.functions.internal;
 
 import org.wso2.carbon.identity.application.authentication.framework.JsFunctionRegistry;
 import org.wso2.carbon.registry.core.service.RegistryService;

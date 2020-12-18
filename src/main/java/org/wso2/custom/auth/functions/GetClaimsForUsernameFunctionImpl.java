@@ -1,4 +1,4 @@
-package org.wso2.custom.auth.functions.forceauth;
+package org.wso2.custom.auth.functions;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -8,7 +8,7 @@ import org.wso2.carbon.user.api.UserRealm;
 import org.wso2.carbon.user.api.UserStoreException;
 import org.wso2.carbon.user.core.UserStoreManager;
 import org.wso2.carbon.user.core.claim.Claim;
-import org.wso2.custom.auth.functions.forceauth.internal.CustomAuthFuncHolder;
+import org.wso2.custom.auth.functions.internal.CustomAuthFuncHolder;
 
 import java.util.HashMap;
 import java.util.Map;

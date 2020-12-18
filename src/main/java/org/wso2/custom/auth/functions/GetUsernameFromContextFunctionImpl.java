@@ -1,4 +1,4 @@
-package org.wso2.custom.auth.functions.forceauth;
+package org.wso2.custom.auth.functions;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
