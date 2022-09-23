@@ -12,12 +12,14 @@ import org.osgi.service.component.annotations.ReferencePolicy;
 import org.wso2.carbon.identity.application.authentication.framework.JsFunctionRegistry;
 import org.wso2.carbon.registry.core.service.RegistryService;
 import org.wso2.carbon.user.core.service.RealmService;
+import org.wso2.custom.auth.functions.GenerateHashFunction;
+import org.wso2.custom.auth.functions.GenerateHashFunctionImpl;
+import org.wso2.custom.auth.functions.GetClaimsForUsernameFunction;
+import org.wso2.custom.auth.functions.GetClaimsForUsernameFunctionImpl;
 import org.wso2.custom.auth.functions.GetUsernameFromContextFunction;
 import org.wso2.custom.auth.functions.GetUsernameFromContextFunctionImpl;
 import org.wso2.custom.auth.functions.SetForceAuthFunction;
 import org.wso2.custom.auth.functions.SetForceAuthFunctionImpl;
-import org.wso2.custom.auth.functions.GetClaimsForUsernameFunction;
-import org.wso2.custom.auth.functions.GetClaimsForUsernameFunctionImpl;
 
 @Component(
         name = "custom.auth.functions.component",
@@ -42,6 +44,10 @@ public class CustomAuthFuncComponent {
         GetClaimsForUsernameFunction getClaimsForUsernameFunctionImpl = new GetClaimsForUsernameFunctionImpl();
         jsFunctionRegistry.register(JsFunctionRegistry.Subsystem.SEQUENCE_HANDLER, "getClaimsForUsername",
                 getClaimsForUsernameFunctionImpl);
+
+        GenerateHashFunction generateHashFunctionImpl = new GenerateHashFunctionImpl();
+        jsFunctionRegistry.register(JsFunctionRegistry.Subsystem.SEQUENCE_HANDLER, "generateHash",
+                generateHashFunctionImpl);
     }
 
     @Deactivate
@@ -51,6 +57,7 @@ public class CustomAuthFuncComponent {
             jsFunctionRegistry.deRegister(JsFunctionRegistry.Subsystem.SEQUENCE_HANDLER, "setForceAuth");
             jsFunctionRegistry.deRegister(JsFunctionRegistry.Subsystem.SEQUENCE_HANDLER, "getUsernameFromContext");
             jsFunctionRegistry.deRegister(JsFunctionRegistry.Subsystem.SEQUENCE_HANDLER, "getClaimsForUsername");
+            jsFunctionRegistry.deRegister(JsFunctionRegistry.Subsystem.SEQUENCE_HANDLER, "generateHash");
         }
     }
 
