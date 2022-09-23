@@ -4,7 +4,7 @@ This repository includes a set of sample custom adaptive authentication function
 
 *Steps to deploy*
 - Build the project using maven `mvn clean install`
-- Copy the binary file from `target` directory into into `<IS_HOME>/repository/components/dropins` directory
+- Copy the binary file from `target` directory into `<IS_HOME>/repository/components/dropins` directory
 - Restart WSO2 IS
 
 **generateHash()**
@@ -19,6 +19,8 @@ var output = generateHash(input, digestFunction);
 ```
 
 **setForceAuth()**
+
+Note: This functionality is available OOTB from WSO2 IS 5.11.0. Refer to the documentation from [here](https://is.docs.wso2.com/en/5.11.0/references/adaptive-authentication-js-api-reference/#executestepstepid-options-eventcallbacks:~:text=Authentication%20step%20options).
 
 This custom adaptive authentication function can be used to set forceAuth property from the adaptive scripts.
 
